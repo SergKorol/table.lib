@@ -138,6 +138,18 @@ namespace table.lib
                 value.Add(operation);
             return this;
         }
+        
+        public Table<T> Style(StyleSettings style)
+        {
+            if (!Properties.TryGetValue(style.StyleType, out Dictionary<string, string> value))
+                Properties.Add(style.StyleType, style.Properties);
+            else
+                foreach (var property in style.Properties)
+                {
+                    value[property.Key] = property.Value;
+                }
+            return this;
+        }
 
         public Table<T> OverrideColumnsNames(Dictionary<string, string> columns)
         {
@@ -481,7 +493,14 @@ namespace table.lib
         {
             var stringBuilder = new StringBuilder();
             if (Items.Count == 0) return "";
-            stringBuilder.AppendLine("<table style=\"border-collapse: collapse; width: 100%;\">");
+            if (Properties != null && Properties.TryGetValue(StyleType.Table, out var table))
+            {
+                stringBuilder.AppendLine($"<table style=\"{string.Join("; ", table.Select(kv => $"{kv.Key}: {kv.Value}"))}\">");
+            }
+            else
+            {
+                stringBuilder.AppendLine("<table style=\"border-collapse: collapse; width: 100%;\">");
+            }
             stringBuilder.AppendLine("<tr>");
 
             var filteredPropertyNames = FilterProperties();
@@ -491,8 +510,16 @@ namespace table.lib
                 if (ColumnNameOverrides.TryGetValue(property.Name, out string value))
                     headerName = value;
 
-                stringBuilder.AppendLine(
-                    $"<th style=\"text-align: center; background-color: #04163d; color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;\">{headerName.ToHtml()}</th>");
+                if (Properties != null && Properties.TryGetValue(StyleType.Header, out var header))
+                {
+                    stringBuilder.AppendLine(
+                        $"<th style=\"{string.Join("; ", header.Select(kv => $"{kv.Key}: {kv.Value}"))}\">{headerName.ToHtml()}</th>");
+                }
+                else
+                {
+                    stringBuilder.AppendLine(
+                        $"<th style=\"text-align: center; background-color: #04163d; color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;\">{headerName.ToHtml()}</th>");
+                }
             }
 
             stringBuilder.AppendLine("</tr>");
