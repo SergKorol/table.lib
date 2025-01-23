@@ -39,6 +39,8 @@ namespace table.lib
 
         public Dictionary<string, List<HighlightOperator>> Operation { get; set; } = [];
 
+        public Dictionary<StyleType, Dictionary<string, string>> Properties { get; set; } = [];
+
         public Options Options { get; set; } = new Options();
 
         public Dictionary<string, TextJustification> ColumnTextJustification { get; set; } = [];

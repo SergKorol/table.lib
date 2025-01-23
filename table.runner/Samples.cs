@@ -31,6 +31,33 @@ namespace table.runner
 {
     public static class Samples
     {
+        public static void SimpleHtmlOutputWithHeaderStylesForList()
+        {
+            Table<IEnumerable<string>>.Add(GetStringMatrix())
+            .Style(new StyleSettings { StyleType = StyleType.Header, Properties =
+            {
+                { "background-color", "red" },
+                {"text-align", "left"},
+                {"color", "white"},
+                {"padding", "6px"},
+                {"border", "3px solid #dddddd"},
+                {"font-family", "sans-serif"},
+                {"font-size", "16px"}
+            }})
+            .ToHtml("my_test.html");
+        }
+        
+        public static void SimpleHtmlOutputWithTableStylesForList()
+        {
+            Table<IEnumerable<string>>.Add(GetStringMatrix())
+                .Style(new StyleSettings { StyleType = StyleType.Table, Properties =
+                {
+                    { "border-collapse", "collapse" },
+                    {"width", "50%"}
+                }})
+                .ToHtml("my_test.html");
+        }
+        
         public static List<TestClass> GetSampleOutput()
         {
             var list = new List<TestClass>

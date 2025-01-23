@@ -47,13 +47,16 @@ namespace table.runner
             Samples.SimpleDbRecordWithOptions();
             Samples.SimpleDbRecordWithOptionsAndMultipleColumns();
             Samples.SimpleDbRecordWithOptionsAndMultipleColumnsAndFilter();
-
+            
             Samples.SimpleConsoleForDictionary();
             Samples.SimpleConsoleOutputWithHighlighterForDictionary();
             Samples.ComplexMarkDownOutputFilteringForDictionary();
             Samples.SimpleCsvOutputForDictionary();
             Samples.SimpleHtmlOutputForDictionary();
             Samples.SimpleConsoleOutputForDictionary();
+
+            Samples.SimpleHtmlOutputWithHeaderStylesForList();
+            Samples.SimpleHtmlOutputWithTableStylesForList();
         }
     }
 }
