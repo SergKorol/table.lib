@@ -1,0 +1,2 @@
+INSERT INTO Products (Id, Name, Description, Price, PictureUrl, Type, Brand, QuantityInStock)
+VALUES (1, 'Angular Speedster Board 2000', 'Lorem ipsum dolor sit amet- consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere- magna sed pulvinar ultricies- purus lectus malesuada libero- sit amet commodo magna eros quis urna.', 20000, '/images/products/sb-ang1.png', 'Boards', 'Angular', 100);

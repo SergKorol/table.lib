@@ -22,6 +22,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -690,6 +691,7 @@ namespace table.lib
             if (Items.Count == 0) return "";
             var header = $"INSERT INTO {ClassName} (";
             var filteredPropertyNames = FilterProperties();
+
             foreach (var property in filteredPropertyNames)
             {
                 var headerName = property.Name;
@@ -715,15 +717,15 @@ namespace table.lib
                         int _ => obj.ToString().ToSql(),
                         long _ => obj.ToString().ToSql(),
                         bool _ => obj.ToString().ToSql() == "True" ? "1" : "0",
-                        DateTime time => "'" + time.ToString("yyyy-MM-dd") + "'",
-                        decimal value1 => value1.ToString("#0.0###"),
-                        double value1 => value1.ToString("#0.0###"),
+                        DateTime time => "'" + time.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + "'",
+                        decimal value1 => value1.ToString("#0.0###", CultureInfo.InvariantCulture),
+                        double value1 => value1.ToString("#0.0###", CultureInfo.InvariantCulture),
                         _ => (obj != null ? obj.ToString().ToSql() : "NULL")
                     };
                     s += $"{p},";
                 }
 
-                s = s.Remove(s.Length - 1);
+                s = s.Remove(s.Length - 1); 
                 s += ");";
                 stringBuilder.AppendLine($"{header}{s}");
             }

@@ -1,0 +1,1 @@
+INSERT INTO AspNetUsers (Id, PhoneNumber,LockoutEnd) VALUES (1,NULL,NULL)

@@ -26,14 +26,14 @@ namespace table.lib.tests
             return list;
         }
 
-        [Test]
+        [Fact]
         public void TestPivot()
         {
             var s = Pivot<TestClass>.Add(GetSampleOutput()).ToString();
             Console.Write(s);
         }
 
-        [Test]
+        [Fact]
         public void TestPivot2()
         {
             Pivot<TestClass>.Add(GetSampleOutput()).ToConsole();
