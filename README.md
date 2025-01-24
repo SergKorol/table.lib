@@ -361,6 +361,110 @@ Real HTML output:
 
 ![htmlresult](htmlresult.png)
 
+If you don't like default header styles, you can set custom styles:
+```c#
+Table<IEnumerable<string>>.Add(GetStringMatrix())
+            .Style(new StyleSettings { StyleType = StyleType.Header, Properties =
+            {
+                { "background-color", "red" },
+                {"text-align", "left"},
+                {"color", "white"},
+                {"padding", "6px"},
+                {"border", "3px solid #dddddd"},
+                {"font-family", "sans-serif"},
+                {"font-size", "16px"}
+            }})
+            .ToHtml("my_test.html");
+```
+Output:
+<table style="border-collapse: collapse; width: 100%;">
+<tr>
+<th style="background-color: red; text-align: left; color: white; padding: 6px; border: 3px solid #dddddd; font-family: sans-serif; font-size: 16px">Capacity</th>
+<th style="background-color: red; text-align: left; color: white; padding: 6px; border: 3px solid #dddddd; font-family: sans-serif; font-size: 16px">Count</th>
+<th style="background-color: red; text-align: left; color: white; padding: 6px; border: 3px solid #dddddd; font-family: sans-serif; font-size: 16px">Dynamic0</th>
+<th style="background-color: red; text-align: left; color: white; padding: 6px; border: 3px solid #dddddd; font-family: sans-serif; font-size: 16px">Dynamic1</th>
+<th style="background-color: red; text-align: left; color: white; padding: 6px; border: 3px solid #dddddd; font-family: sans-serif; font-size: 16px">Dynamic2</th>
+</tr>
+<tr>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">4</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">3</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">AAA</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">BBB</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">CCC</td>
+</tr>
+<tr>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">4</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">3</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">AAA</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">BBB</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">CCC</td>
+</tr>
+<tr>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">4</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">3</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">AAA</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">BBB</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">CCC</td>
+</tr>
+<tr>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">4</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">3</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">AAA</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">BBB</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">CCC</td>
+</tr>
+</table>
+
+
+If you want to change table styles:
+```c#
+Table<IEnumerable<string>>.Add(GetStringMatrix())
+                .Style(new StyleSettings { StyleType = StyleType.Table, Properties =
+                {
+                    { "border-collapse", "collapse" },
+                    {"width", "50%"}
+                }})
+                .ToHtml("my_test.html");
+```
+Output:
+<table style="border-collapse: collapse; width: 50%">
+<tr>
+<th style="text-align: center; background-color: #04163d; color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">Capacity</th>
+<th style="text-align: center; background-color: #04163d; color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">Count</th>
+<th style="text-align: center; background-color: #04163d; color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">Dynamic0</th>
+<th style="text-align: center; background-color: #04163d; color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">Dynamic1</th>
+<th style="text-align: center; background-color: #04163d; color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">Dynamic2</th>
+</tr>
+<tr>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">4</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">3</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">AAA</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">BBB</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">CCC</td>
+</tr>
+<tr>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">4</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">3</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">AAA</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">BBB</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">CCC</td>
+</tr>
+<tr>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">4</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">3</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">AAA</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">BBB</td>
+<td style="text-align: right; color: black; background-color: white;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">CCC</td>
+</tr>
+<tr>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">4</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">3</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">AAA</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">BBB</td>
+<td style="text-align: right; color: black; background-color: #f2f2f2;padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;">CCC</td>
+</tr>
+</table>
+
 ## CSV Output
 
 Trasform your output into a nicely formatted `CSV` file
