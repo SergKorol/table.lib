@@ -54,6 +54,11 @@ namespace ListToTable.Runner
                     { "border-collapse", "collapse" },
                     {"width", "50%"}
                 }})
+                .ColumnContentTextJustification(new Dictionary<string, TextJustification>
+                {
+                    { "Dynamic0", TextJustification.Justified },
+                
+                })
                 .ToHtml("my_test.html");
         }
         

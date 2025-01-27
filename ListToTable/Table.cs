@@ -613,9 +613,31 @@ namespace ListToTable
                             }
 
                     }
+                    string textAlign = "right";
+                    if (ColumnTextJustification.TryGetValue(property.Name, out TextJustification text))
+                    {
+                        switch (text)
+                        {
+                            case TextJustification.Centered:
+                                textAlign = "center";
+                                break;
+                            case TextJustification.Right:
+                                textAlign = "right";
+                                break;
+                            case TextJustification.Left:
+                                textAlign = "left";
+                                break;
+                            case TextJustification.Justified:
+                                textAlign = "justify";
+                                break;
+                            default:
+                                throw new ArgumentOutOfRangeException(
+                                    $"Unrecognized TextJustification {text}");
+                        }
+                    }
 
                     stringBuilder.AppendLine(
-                        $"<td style=\"text-align: right; color: black; background-color: {color};padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;\">{valueProp.ToHtml()}</td>");
+                        $"<td style=\"text-align: {textAlign}; color: black; background-color: {color};padding: 4px;border: 1px solid #dddddd; font-family:monospace; font-size: 14px;\">{valueProp.ToHtml()}</td>");
                 }
 
                 rowNumber++;
