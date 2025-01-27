@@ -32,6 +32,6 @@ jobs:
       run: dotnet pack --configuration Release ListToTable/ListToTable.csproj
     ##- name: Publish the package to Repository
       ##run: dotnet nuget push Tooller.Interface/bin/Release/*.nupkg -k ${{ secrets.GH_TOKEN }} -s $NUGET_REPO_URL --skip-duplicate
-    ##- name: Publish to NuGet.org
-      ##run: dotnet nuget push ListToTable/bin/Release/*.nupkg -k ${{ secrets.NUGET_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+    - name: Publish to NuGet.org
+      run: dotnet nuget push ListToTable/bin/Release/*.nupkg -k ${{ secrets.NUGET_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
 
