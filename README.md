@@ -1,18 +1,18 @@
-# table.lib
+# ListToTable
 
-This is a versatile and user-friendly `C# (.NET 8)` table library that can quickly render any `List<T>` or `Dictionary<TV, T>` into a visually appealing `markdown`, `CSV`, `HTML`, `SpecFlow`, `SQL-insert`, or `console` table format, while providing flexibility for other formats as well. In addition, it also supports `dynamic` returns from Dapper as `IEnumerable<IDictionary<string, object>>` via `DBTable` object. Whether you need to format data for documentation, testing, or display purposes, this library makes it easy to do so in a variety of formats, with just a few lines of code.
+This is a versatile and user-friendly `C# (.NET 9)` table library that can quickly render any `List<T>` or `Dictionary<TV, T>` into a visually appealing `markdown`, `CSV`, `HTML`, `SpecFlow`, `SQL-insert`, or `console` table format, while providing flexibility for other formats as well. In addition, it also supports `dynamic` returns from Dapper as `IEnumerable<IDictionary<string, object>>` via `DBTable` object. Whether you need to format data for documentation, testing, or display purposes, this library makes it easy to do so in a variety of formats, with just a few lines of code.
 
 ## Installation
 
-via nuget package -> https://www.nuget.org/packages/table.lib/
+via nuget package -> https://www.nuget.org/packages/ListToTable/
 
 ```bash
-dotnet add package table.lib --version 1.13.0
+dotnet add package ListToTable --version 1.0.0
 ```
 
 ## Markdown format in the `console` output
 
-To make it easier to share, `table.lib` outputs the console output as markdown friendly. Note that there is a specific `markdown` output so the text justification can happen as per markdown specification.
+To make it easier to share, `ListToTable` outputs the console output as markdown friendly. Note that there is a specific `markdown` output so the text justification can happen as per markdown specification.
 
 ```c#
 Table<TestClass>.Add(list).ToConsole();
