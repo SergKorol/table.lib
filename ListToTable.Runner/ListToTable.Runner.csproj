@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>table.runner</RootNamespace>
     <LangVersion>13</LangVersion>
   </PropertyGroup>
 
@@ -13,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\table.lib\table.lib.csproj" />
+    <ProjectReference Include="..\ListToTable\ListToTable.csproj" />
   </ItemGroup>
 
 </Project>

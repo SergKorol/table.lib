@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\table.runner\table.runner.csproj" />
+    <ProjectReference Include="..\ListToTable.Runner\ListToTable.Runner.csproj" />
   </ItemGroup>
 
   <ItemGroup>

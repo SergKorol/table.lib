@@ -4,7 +4,7 @@ using System.Data.Common;
 using System.Linq;
 using Dapper;
 
-namespace table.lib.tests
+namespace ListToTable.Tests
 {
 
     public class SqlInsertDbIntegrationTests : IClassFixture<DbFixture>, IDisposable

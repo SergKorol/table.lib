@@ -1,4 +1,4 @@
-namespace table.lib;
+namespace ListToTable;
 
 public enum StyleType
 {

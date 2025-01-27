@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
-using table.runner;
+using ListToTable.Runner;
 
-namespace table.lib.tests
+namespace ListToTable.Tests
 {
     public class SqlInsertTests : IClassFixture<DbFixture>, IDisposable
     {

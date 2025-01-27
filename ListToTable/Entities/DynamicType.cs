@@ -1,4 +1,4 @@
-﻿namespace table.lib.Entities
+﻿namespace ListToTable.Entities
 {
     public class DynamicType
     {

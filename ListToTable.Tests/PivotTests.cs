@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using table.runner;
+using ListToTable.Runner;
 
-namespace table.lib.tests
+namespace ListToTable.Tests
 {
     public class PivotTests
     {

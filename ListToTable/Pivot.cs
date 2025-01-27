@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using table.lib.Entities;
+using ListToTable.Entities;
 
-namespace table.lib
+namespace ListToTable
 {
     public class Pivot<T>
     {

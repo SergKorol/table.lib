@@ -20,28 +20,11 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-namespace table.lib
+namespace ListToTable
 {
-    public class PropertyName
+    public enum FilterAction
     {
-        public PropertyName(string name)
-        {
-            Name = name;
-            Index = 0;
-            IsCollection = false;
-        }
-
-        public PropertyName(string name, int index, int propertyIndex)
-        {
-            Name = name;
-            Index = index;
-            PropertyIndex = propertyIndex;
-            IsCollection = true;
-        }
-
-        public string Name { get; set; }
-        public int Index { get; set; }
-        public bool IsCollection { get; set; }
-        public int PropertyIndex { get; set; }
+        Include = 0,
+        Exclude = 1
     }
 }

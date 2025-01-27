@@ -25,7 +25,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace table.lib
+namespace ListToTable
 {
     public class DbTable
     {

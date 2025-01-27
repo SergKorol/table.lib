@@ -27,7 +27,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace table.lib
+namespace ListToTable
 {
     public class Table<T> : Base<T> where T : class
     {

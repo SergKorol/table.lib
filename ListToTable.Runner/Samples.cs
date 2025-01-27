@@ -25,9 +25,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using table.lib;
 
-namespace table.runner
+namespace ListToTable.Runner
 {
     public static class Samples
     {

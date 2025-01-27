@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace table.lib;
+namespace ListToTable;
 
 public class StyleSettings
 {

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "table.runner", "table.runner\table.runner.csproj", "{93820EA7-663E-4F31-BC17-A1DA7C372FCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListToTable.Runner", "ListToTable.Runner\ListToTable.Runner.csproj", "{93820EA7-663E-4F31-BC17-A1DA7C372FCB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "table.lib", "table.lib\table.lib.csproj", "{BB822667-F8CF-4402-A015-D15284C0F36E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListToTable", "ListToTable\ListToTable.csproj", "{BB822667-F8CF-4402-A015-D15284C0F36E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "table.lib.tests", "table.lib.tests\table.lib.tests.csproj", "{6ADDCEA6-F817-4E74-9801-4884F92AB099}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListToTable.Tests", "ListToTable.Tests\ListToTable.Tests.csproj", "{6ADDCEA6-F817-4E74-9801-4884F92AB099}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

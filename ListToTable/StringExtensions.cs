@@ -22,7 +22,7 @@
 
 using System;
 
-namespace table.lib
+namespace ListToTable
 {
     public static class StringExtensions
     {

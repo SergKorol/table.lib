@@ -20,11 +20,15 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-namespace table.lib
+namespace ListToTable
 {
-    public enum FilterAction
+    public class Options
     {
-        Include = 0,
-        Exclude = 1
+        public string DateFormat { get; set; } = "dd-MMM-yyyy";
+        public string DecimalFormat { get; set; } = "#,##0.00";
+        public string DynamicName { get; set; } = "Dynamic";
+        public string KeyName { get; set; } = "Key_Id";
+        public int NumberDecimals { get; set; } = 8;
+        public bool DiscardEmptyList = false;
     }
 }

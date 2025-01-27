@@ -8,7 +8,7 @@ using JetBrains.Annotations;
 using Npgsql;
 using Testcontainers.PostgreSql;
 
-namespace table.lib.tests;
+namespace ListToTable.Tests;
 
 [UsedImplicitly]
 public sealed class DbFixture : IAsyncLifetime

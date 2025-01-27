@@ -20,15 +20,17 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-namespace table.lib
+using System;
+
+namespace ListToTable.Runner
 {
-    public class Options
+    public class TestClass
     {
-        public string DateFormat { get; set; } = "dd-MMM-yyyy";
-        public string DecimalFormat { get; set; } = "#,##0.00";
-        public string DynamicName { get; set; } = "Dynamic";
-        public string KeyName { get; set; } = "Key_Id";
-        public int NumberDecimals { get; set; } = 8;
-        public bool DiscardEmptyList = false;
+        public int? Field1 { get; set; }
+        public string Field2 { get; set; }
+        public decimal? Field3 { get; set; }
+        public bool? Field4 { get; set; }
+        public DateTime? Field5 { get; set; }
+        public double? Field6 { get; set; }
     }
 }
